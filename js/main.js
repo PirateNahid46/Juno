@@ -1,6 +1,9 @@
 let msg = document.getElementById("talk");
 let mic = document.getElementById("mic");
 
+
+
+
 const input = document.getElementById("input");
 let chatareamain = document.querySelector('.chatarea-main');
 let chatareaouter = document.querySelector('.chatarea-outer');
@@ -82,6 +85,36 @@ msg.addEventListener("submit", function(e){
     
 })
 
+function greet(){
+    var time = new Date().getHours();
+    var greetings;
+
+    if (time<12){
+        greetings = "Good Morning.";
+    }
+    if (12<time<18){
+        greetings = "Good Afternoon.";
+    }
+    else{
+        greetings = "Good Evening.";
+    }
+
+
+
+    showchatbotmsg(greetings);
+    const speech = new SpeechSynthesisUtterance();
+    speech.text = greetings;
+    if(voices.length == 0){
+        var text = speech.text;
+        responsiveVoice.speak(text, "US English Female");
+    }else{
+        window.speechSynthesis.speak(speech);
+
+    }
+
+
+}
+
 recognition.onresult=function(e){
     let resultIndex = e.resultIndex;
     let transcript = e.results[resultIndex][0].transcript;
@@ -97,3 +130,4 @@ mic.addEventListener("click", function(){
     recognition.start();
     console.log("Activated");
 })
+greet();

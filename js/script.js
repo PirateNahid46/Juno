@@ -10,6 +10,7 @@ Question[7] = new Array("favourite food");
 Question[8] = new Array("do you dream");
 Question[9] = new Array("favourite game");
 Question[10] = new Array("where do you live");
+Question[11] = new Array("can you dance");
 
 
 
@@ -25,3 +26,4 @@ Answer[7] = new Array("It's mutton");
 Answer[8] = new Array("I dream about having a super computer");
 Answer[9] = new Array("I still cannot play outdoor games. I can only play video games. And I like Mobile Legends most.", "When I would be able to walk I will definitely play Basketball.");
 Answer[10] = new Array("I live inside a very dark place , that place is the darkest place of the universe. And it is your heart.");
+Answer[11] = new Array("I cannot but I can learn.");
