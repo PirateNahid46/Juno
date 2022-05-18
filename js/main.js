@@ -123,6 +123,8 @@ recognition.onresult=function(e){
     let transcript = e.results[resultIndex][0].transcript;
     chatareamain.appendChild(showusermsg(transcript));
     check(transcript.toLowerCase());
+    const chat = document.getElementById("chat");
+    chat.scrollTo(0, chat.scrollHeight);
     
     
 }

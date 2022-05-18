@@ -25,5 +25,5 @@ Answer[6] = new Array("Using Computer which has linux operating system");
 Answer[7] = new Array("It's mutton");
 Answer[8] = new Array("I dream about having a super computer");
 Answer[9] = new Array("I still cannot play outdoor games. I can only play video games. And I like Mobile Legends most.", "When I would be able to walk I will definitely play Basketball.");
-Answer[10] = new Array("I live inside a very dark place , that place is the darkest place of the universe. And it is your heart.");
+Answer[10] = new Array("I live inside a very dark place , that place is the darkest place of the universe. And it is your heart. ","I live in Rajshahi Cadet College.");
 Answer[11] = new Array("I cannot but I can learn.");
