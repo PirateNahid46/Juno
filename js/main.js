@@ -119,6 +119,7 @@ function greet(){
 recognition.onresult=function(e){
     let resultIndex = e.resultIndex;
     let transcript = e.results[resultIndex][0].transcript;
+    chatareamain.appendChild(showusermsg(transcript));
     check(transcript.toLowerCase());
     
 }
@@ -138,12 +139,8 @@ function check(message){
 
         }
     }
-    if(message.includes()){
-
-    }
 
     else{
-        chatareamain.appendChild(showusermsg(message));
         chatbotvoice(message);
         console.log(message);
 
