@@ -72,6 +72,8 @@ function chatbotvoice(message){
 
     }
     chatareamain.appendChild(showchatbotmsg(speech.text));
+    
+    
 }
 
 msg.addEventListener("submit", function(e){
@@ -122,6 +124,7 @@ recognition.onresult=function(e){
     chatareamain.appendChild(showusermsg(transcript));
     check(transcript.toLowerCase());
     
+    
 }
 
 function check(message){
@@ -150,6 +153,10 @@ function check(message){
 
 recognition.onend=function(){
     mic.style.color="#ff3b3b";
+    mic.style.color='#39c81f';
+    recognition.start();
+    console.log("Activated");
+    
 }
 mic.addEventListener("click", function(){
     mic.style.color='#39c81f';
