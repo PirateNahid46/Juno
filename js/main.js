@@ -144,8 +144,20 @@ function check(message){
 
         }
     }
-    if(message.includes("call")){
-        window.location.href = "tel:+8801773021389"
+    if(message.includes("directory") || message.includes("directories")){
+        window.open("https://piratenahid46.github.io/Directory/main/index.html", "_blank");
+        chatareamain.appendChild(showchatbotmsg("Showing Directory of Rajshahi Cadet College."));
+        const speech = new SpeechSynthesisUtterance();
+        speech.voice = voices[2];
+        speech.text = "Showing Directory of Rajshahi Cadet College.";
+        if(voices.length == 0){
+            var text = speech.text;
+            responsiveVoice.speak(text, "US English Female");
+        }else{
+            window.speechSynthesis.speak(speech);
+
+        }
+        
     }
 
     else{
