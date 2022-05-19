@@ -37,7 +37,7 @@ function chatbotvoice(message){
 
     }
     else{
-        speech.voice = voices[29];
+        speech.voice = voices[2];
 
     }
     
@@ -52,7 +52,8 @@ function chatbotvoice(message){
         Ans = Answer[x];
     
         for(var i = 0 ; i< Ques.length; i++){
-            var Ask = Ques[i];
+            var Ask = Ques[i].toLowerCase();
+
             if (message.includes(Ask)){
                 last = Ans;
                 console.log(Ans);
@@ -130,7 +131,18 @@ recognition.onresult=function(e){
 }
 
 function check(message){
-    if(message.includes("show documentary") || message.includes("show documentar") || message.includes("documentary")){
+    if(message.includes("documentary")){
+        doSOmething(message);
+    }
+    else{
+        chatbotvoice(message);
+        console.log(message);
+
+    }
+}
+
+function doSOmething(message){
+    if(message.includes("documentary")){
         window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
         chatareamain.appendChild(showchatbotmsg("Showing Documentary of Rajshahi Cadet College."));
         const speech = new SpeechSynthesisUtterance();
@@ -143,27 +155,6 @@ function check(message){
             window.speechSynthesis.speak(speech);
 
         }
-    }
-    if(message.includes("directory") || message.includes("directories")){
-        window.open("https://piratenahid46.github.io/Directory/main/index.html", "_blank");
-        chatareamain.appendChild(showchatbotmsg("Showing Directory of Rajshahi Cadet College."));
-        const speech = new SpeechSynthesisUtterance();
-        speech.voice = voices[2];
-        speech.text = "Showing Directory of Rajshahi Cadet College.";
-        if(voices.length == 0){
-            var text = speech.text;
-            responsiveVoice.speak(text, "US English Female");
-        }else{
-            window.speechSynthesis.speak(speech);
-
-        }
-        
-    }
-
-    else{
-        chatbotvoice(message);
-        console.log(message);
-
     }
 }
 
