@@ -130,7 +130,7 @@ recognition.onresult=function(e){
 }
 
 function check(message){
-    if(message.includes("show documentary") || message.includes("show documentar")){
+    if(message.includes("show documentary") || message.includes("show documentar") || message.includes("documentary")){
         window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
         chatareamain.appendChild(showchatbotmsg("Showing Documentary of Rajshahi Cadet College."));
         const speech = new SpeechSynthesisUtterance();
@@ -155,9 +155,6 @@ function check(message){
 
 recognition.onend=function(){
     mic.style.color="#ff3b3b";
-    mic.style.color='#39c81f';
-    recognition.start();
-    console.log("Activated");
     
 }
 mic.addEventListener("click", function(){
