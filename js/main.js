@@ -144,6 +144,9 @@ function check(message){
 
         }
     }
+    if(message.includes("call")){
+        window.location.href = "tel:+8801773021389"
+    }
 
     else{
         chatbotvoice(message);
