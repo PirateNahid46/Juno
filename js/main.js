@@ -31,19 +31,6 @@ function showchatbotmsg(chatbotmsg){
     return chatareaouter;
 }
 function chatbotvoice(message){
-    const speech = new SpeechSynthesisUtterance();
-    if(voices.length < 50 ){
-        speech.voice = voices[2];
-
-    }
-    else{
-        speech.voice = voices[2];
-
-    }
-    
-    
-    
-    
     last = ["Sorry, Can you say that again?"];
     for(var x = 0; x < Question.length; x++){
         var Ques = new Array;
@@ -63,16 +50,8 @@ function chatbotvoice(message){
     }
 
     let finalresult = last[Math.floor(Math.random() * last.length)];
-        speech.text = finalresult;
-    
-    if(voices.length == 0){
-        var text = speech.text;
-        responsiveVoice.speak(text, "US English Female");
-    }else{
-        window.speechSynthesis.speak(speech);
-
-    }
-    chatareamain.appendChild(showchatbotmsg(speech.text));
+    sayText(finalresult);
+    chatareamain.appendChild(showchatbotmsg(finalresult));
     
     
 }
@@ -105,16 +84,7 @@ function greet(){
 
 
     showchatbotmsg(greetings);
-    const speech = new SpeechSynthesisUtterance();
-    speech.text = greetings;
-    if(voices.length == 0){
-        var text = speech.text;
-        responsiveVoice.speak(text, "US English Female");
-    }else{
-        speech.voice = voices[3];
-        window.speechSynthesis.speak(speech);
-
-    }
+    sayText(greetings);
 
 
 }
@@ -130,20 +100,50 @@ recognition.onresult=function(e){
     
 }
 
+function sayText(text){
+    const speech = new SpeechSynthesisUtterance();
+    if(voices.length < 50 ){
+        speech.voice = voices[2];
+
+    }
+    else{
+        speech.voice = voices[2];
+
+    }
+    speech.text = text;
+    
+    if(voices.length == 0){
+        responsiveVoice.speak(text, "US English Female");
+    }else{
+        window.speechSynthesis.speak(speech);
+
+    }
+
+
+}
+
 function check(message){
     if(message.includes("documentary")){
         window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
         chatareamain.appendChild(showchatbotmsg("Showing Documentary of Rajshahi Cadet College."));
-        const speech = new SpeechSynthesisUtterance();
-        speech.voice = voices[2];
-        speech.text = "Showing Documentary of Rajshahi Cadet College.";
-        if(voices.length == 0){
-            var text = speech.text;
-            responsiveVoice.speak(text, "US English Female");
-        }else{
-            window.speechSynthesis.speak(speech);
+        sayText("Showing Documentary of Rajshahi Cadet College.");
+    }
 
-        }
+    else if(message.includes("your age") || message.includes("how old are you")){
+        var age = getAge();
+        sayText(age);
+        chatareamain.appendChild(showchatbotmsg(age));
+
+    }
+    else if(message.includes("time is")){
+        var time = giveTime();
+        sayText(time);
+        chatareamain.appendChild(showchatbotmsg(time));
+    }
+    else if(message.includes("directory")){
+        window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
+        chatareamain.appendChild(showchatbotmsg("Showing Directory of Rajshahi Cadet College."));
+        sayText("Showing Directory of Rajshahi Cadet College.");
     }
 
     else{

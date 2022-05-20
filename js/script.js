@@ -1,7 +1,3 @@
-
-
-
-
 let Question =  new Array;
 Question[0] = ["hello sage", "hi sage", "hello"];
 Question[1] = ["who are you", "what should i call you", "what\'s your name", "what is your name", "your name"];
@@ -18,7 +14,7 @@ Question[11] = ["can you dance"];
 
 
 let Answer = new Array;
-Answer[0] = ["Hi there."];
+Answer[0] = ["Hi there.", "Hey, How are you ?"];
 Answer[1] = ["I am Sage", "I am your friend , Sage is my name.", "You can call me sage."];
 Answer[2] = ["That is great to know."];
 Answer[3] = ["Still I cannot think. But, Nahid told me I would be able to think in the future."];
