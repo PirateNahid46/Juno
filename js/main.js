@@ -81,7 +81,8 @@ msg.addEventListener("submit", function(e){
     e.preventDefault();
     const input2 = input.value;
     showusermsg(input2);
-    check(input2.toLowerCase());
+    chatbotvoice(input2.toLowerCase());
+    console.log(input2);
     const chat = document.getElementById("chat");
     chat.scrollTo(0, chat.scrollHeight);
     input.value = "";
@@ -123,40 +124,15 @@ recognition.onresult=function(e){
     let resultIndex = e.resultIndex;
     let transcript = e.results[resultIndex][0].transcript;
     chatareamain.appendChild(showusermsg(transcript));
-    check(transcript.toLowerCase());
+    chatbotvoice(transcript.toLowerCase());
+    console.log(transcript);
     const chat = document.getElementById("chat");
     chat.scrollTo(0, chat.scrollHeight);
     
     
 }
 
-function check(message){
-    if(message.includes("documentary")){
-        doSOmething(message);
-    }
-    else{
-        chatbotvoice(message);
-        console.log(message);
 
-    }
-}
-
-function doSOmething(message){
-    if(message.includes("documentary")){
-        window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
-        chatareamain.appendChild(showchatbotmsg("Showing Documentary of Rajshahi Cadet College."));
-        const speech = new SpeechSynthesisUtterance();
-        speech.voice = voices[2];
-        speech.text = "Showing Documentary of Rajshahi Cadet College.";
-        if(voices.length == 0){
-            var text = speech.text;
-            responsiveVoice.speak(text, "US English Female");
-        }else{
-            window.speechSynthesis.speak(speech);
-
-        }
-    }
-}
 
 
 recognition.onend=function(){
