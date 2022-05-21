@@ -166,6 +166,16 @@ function check(message){
         sayText(time);
         chatareamain.appendChild(showchatbotmsg(time));
     }
+    else if(message.includes("tell me about")){
+        var str = message;
+			var matches = str.match(/(\d+)/);
+			if (matches) {
+					var nahid	= matches[0];
+                    alert(nahid);
+
+			}
+
+    }
     else if(message.includes("directory")){
         window.open("https://piratenahid46.github.io/Directory/main/profiles.html", "_blank");
         chatareamain.appendChild(showchatbotmsg("Showing Directory of Rajshahi Cadet College."));
