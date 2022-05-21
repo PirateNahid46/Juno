@@ -135,7 +135,7 @@ function check(message){
         chatareamain.appendChild(showchatbotmsg(age));
 
     }
-    else if(message.includes("time is")){
+    else if(message.includes("what time")){
         var time = giveTime();
         sayText(time);
         chatareamain.appendChild(showchatbotmsg(time));
@@ -167,7 +167,7 @@ greet();
 
 function giveTime(){
     var time = new Date();
-    return time.getHours()+":"+time.getMinutes();
+    return "It is "+ time.getHours()+":"+time.getMinutes();
 }
 
 function getAge(){
@@ -175,5 +175,6 @@ function getAge(){
     var BirthDay = new Date(2022, 4, 15, 12, 34, 55, 20);
     var diff = time.getTime() - BirthDay.getTime();
     var Age = new Date(diff);
-    return Age.getFullYear() - 1970 +" Years "+ Age.getMonth() +" Months " + Age.getDate()+ " Days " + Age.getHours() +" Hours " + Age.getMinutes()+ " Minutes " + Age.getSeconds() + " Seconds.";
+    var Year = Age.getFullYear() - 1970;
+    return "I am "+ Year +" Years "+ Age.getMonth() +" Months " + Age.getDate()+ " Days " + Age.getHours() +" Hours " + Age.getMinutes()+ " Minutes " + Age.getSeconds() + " Seconds old.";
 }
