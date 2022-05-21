@@ -1,6 +1,32 @@
 let msg = document.getElementById("talk");
 let mic = document.getElementById("mic");
 
+const firebaseConfig = {
+    apiKey: "AIzaSyCEAh8NxC793m1yyo88KpvxtO5CCaoSaRA",
+    authDomain: "directory-74c53.firebaseapp.com",
+    projectId: "directory-74c53",
+    storageBucket: "directory-74c53.appspot.com",
+    messagingSenderId: "213214606363",
+    appId: "1:213214606363:web:e049496d965b472303f4be",
+    measurementId: "G-WZQEWYNZWB"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+  var storage = firebase.storage();
+  var storageRef = storage.ref();
+  main();
+
+  function main(){
+    const fetchChat = db.ref("info/");
+    fetchChat.on("child_added", function (snapshot) {
+      const messages = snapshot.val();
+        const msg = "<div onclick=\"load("+messages.cn+")\" class=\"cn"+messages.house+"\"> <img id=\""+messages.cn+"\" height=\"50\" width=\"50\"/> <font> "+ messages.name +"'"+messages.cn+" <font/></div>";
+        
+        
+    });
+
+  }
+
 
 
 
@@ -141,7 +167,7 @@ function check(message){
         chatareamain.appendChild(showchatbotmsg(time));
     }
     else if(message.includes("directory")){
-        window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
+        window.open("https://piratenahid46.github.io/Directory/main/profiles.html", "_blank");
         chatareamain.appendChild(showchatbotmsg("Showing Directory of Rajshahi Cadet College."));
         sayText("Showing Directory of Rajshahi Cadet College.");
     }
