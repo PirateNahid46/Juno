@@ -39,7 +39,7 @@ let voices = [];
       console.log(voices);
     };
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
+
 
 let last;
 
@@ -48,6 +48,28 @@ function showusermsg(usermsg){
     output += `<div class="chatarea-inner user">${usermsg}</div>`;
     chatareaouter.innerHTML += output;
     return chatareaouter;
+}
+function recognize(){
+    const recognition = new SpeechRecognition();
+    recognition.start();
+
+
+
+    recognition.onresult=function(e){
+        let resultIndex = e.resultIndex;
+        let transcript = e.results[resultIndex][0].transcript;
+        chatareamain.appendChild(showusermsg(transcript));
+        check(transcript.toLowerCase());
+        const chat = document.getElementById("chat");
+        chat.scrollTo(0, chat.scrollHeight);
+        
+        
+    }
+    recognition.onend=function(){
+        mic.style.color="#ff3b3b";
+        
+    }
+
 }
 
 function showchatbotmsg(chatbotmsg){
@@ -115,16 +137,7 @@ function greet(){
 
 }
 
-recognition.onresult=function(e){
-    let resultIndex = e.resultIndex;
-    let transcript = e.results[resultIndex][0].transcript;
-    chatareamain.appendChild(showusermsg(transcript));
-    check(transcript.toLowerCase());
-    const chat = document.getElementById("chat");
-    chat.scrollTo(0, chat.scrollHeight);
-    
-    
-}
+
 
 function sayText(text){
     const speech = new SpeechSynthesisUtterance();
@@ -173,11 +186,18 @@ function check(message){
 					var cn	= matches[0];
                     const fetchChat = db.ref("info/" +cn);
                     fetchChat.once("value").then( function (snapshot) {
-                    const name = "Cadet no. "+cn+ " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch";
+                        if(snapshot != null){
+                            var misc = snapshot.child("misc").val();
+                            const name = "Cadet no. "+cn+ " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. " + misc;
+                            chatareamain.appendChild(showchatbotmsg(name));
+                            sayText(name);
+                        }
+                        else{
+                            const name = "I don\'t know about him.";
+                            chatareamain.appendChild(showchatbotmsg(name));
+                            sayText(name);
+                        }
                     
-                    ;
-                    chatareamain.appendChild(showchatbotmsg(name));
-                    sayText(name);
 
                     });
                 
@@ -199,14 +219,11 @@ function check(message){
 }
 
 
-recognition.onend=function(){
-    mic.style.color="#ff3b3b";
-    
-}
+
 mic.addEventListener("click", function(){
     mic.style.color='#39c81f';
-    recognition.start();
     console.log("Activated");
+    recognize();
 })
 greet();
 

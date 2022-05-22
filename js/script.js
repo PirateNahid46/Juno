@@ -11,6 +11,7 @@ Question[8] = ["do you dream"];
 Question[9] = ["favourite game", "favorite game"];
 Question[10] = ["where do you live"];
 Question[11] = ["can you dance"];
+Question[12] = ["i love you", "i love u"];
 
 
 let Answer = new Array;
@@ -26,3 +27,4 @@ Answer[8] = ["I dream about having a super computer"];
 Answer[9] = ["I still cannot play outdoor games. I can only play video games. And I like Mobile Legends most.", "When I would be able to walk I will definitely play Basketball."];
 Answer[10] = ["I live inside a very dark place , that place is the darkest place of the universe. And it is your heart. ","I live in Rajshahi Cadet College."];
 Answer[11] = ["I cannot but I can learn."];
+Answer[12] = ["So what, I don\'t care.", "I love you too."];
