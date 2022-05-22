@@ -170,8 +170,14 @@ function check(message){
         var str = message;
 			var matches = str.match(/(\d+)/);
 			if (matches) {
-					var nahid	= matches[0];
-                    alert(nahid);
+					var cn	= matches[0];
+                    const fetchChat = db.ref("info/" +cn);
+                    fetchChat.once("value").then( function (snapshot) {
+                    const name = snapshot.child("name").val();
+                    chatareamain.appendChild(showchatbotmsg(name));
+
+                    });
+                
 
 			}
 
