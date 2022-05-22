@@ -173,8 +173,11 @@ function check(message){
 					var cn	= matches[0];
                     const fetchChat = db.ref("info/" +cn);
                     fetchChat.once("value").then( function (snapshot) {
-                    const name = snapshot.child("name").val();
+                    const name = "Cadet no. "+cn+ " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch";
+                    
+                    ;
                     chatareamain.appendChild(showchatbotmsg(name));
+                    sayText(name);
 
                     });
                 
