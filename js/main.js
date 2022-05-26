@@ -179,14 +179,14 @@ function check(message){
         sayText(time);
         chatareamain.appendChild(showchatbotmsg(time));
     }
-    else if(message.includes("tell me about")){
+    else if(message.includes("tell me about")|| message.includes("tell about")){
         var str = message;
 			var matches = str.match(/(\d+)/);
 			if (matches) {
 					var cn	= matches[0];
                     const fetchChat = db.ref("info/" +cn);
                     fetchChat.once("value").then( function (snapshot) {
-                        if(snapshot != null){
+                        if(snapshot.val() != null){
                             var misc = snapshot.child("misc").val();
                             const name = "Cadet no. "+cn+ " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. " + misc;
                             chatareamain.appendChild(showchatbotmsg(name));
