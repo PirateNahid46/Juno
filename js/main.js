@@ -118,15 +118,17 @@ msg.addEventListener("submit", function(e){
 function greet(){
     var time = new Date().getHours();
     var greetings;
+    var intro = "";
+    //var intro = "Most Respected Principal Sir, Vice Principal Sir, Officers, Learned Teachers and Shahi Cadets ,";
 
     if (time<12){
-        greetings = "Good Morning.";
+        greetings = intro + "Good Morning to you all.";
     }
-    if (12<time && time<18){
-        greetings = "Good Afternoon.";
+    else if (12<time && time<18){
+        greetings = intro +"Good Afternoon.";
     }
     else{
-        greetings = "Good Evening.";
+        greetings = intro+"Good Evening.";
     }
 
 
@@ -179,7 +181,7 @@ function check(message){
         sayText(time);
         chatareamain.appendChild(showchatbotmsg(time));
     }
-    else if(message.includes("tell me about")|| message.includes("tell about")){
+    else if(message.includes("tell me about")|| message.includes("tell about") || message.includes("number is")){
         var str = message;
 			var matches = str.match(/(\d+)/);
 			if (matches) {
@@ -193,7 +195,8 @@ function check(message){
                             sayText(name);
                         }
                         else{
-                            const name = "I don\'t know about him.";
+                            const name = "I don\'t know about him. You can tell hime to add his information here.";
+                            window.open("https://piratenahid46.github.io/Directory/Add/index.html", "_blank");
                             chatareamain.appendChild(showchatbotmsg(name));
                             sayText(name);
                         }
@@ -238,5 +241,5 @@ function getAge(){
     var diff = time.getTime() - BirthDay.getTime();
     var Age = new Date(diff);
     var Year = Age.getFullYear() - 1970;
-    return "I am "+ Year +" Years "+ Age.getMonth() +" Months " + Age.getDate()+ " Days " + Age.getHours() +" Hours " + Age.getMinutes()+ " Minutes " + Age.getSeconds() + " Seconds old.";
+    return "I am "+ Year +" Years, "+ Age.getMonth() +" Months, " + Age.getDate()+ " Days, " + Age.getHours() +" Hours, " + Age.getMinutes()+ " Minutes, " + Age.getSeconds() + " Seconds old.";
 }

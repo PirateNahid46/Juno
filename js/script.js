@@ -1,5 +1,5 @@
 let Question =  new Array;
-Question[0] = ["hello sage", "hi sage", "hello"];
+Question[0] = ["hello juno", "hi juno", "hello", "good morning", "good evening", "good afternoon"];
 Question[1] = ["who are you", "what should i call you", "what\'s your name", "what is your name", "your name"];
 Question[2] = ["i am fine", "doing good"];
 Question[3] = ["can you think"];
@@ -12,11 +12,15 @@ Question[9] = ["favourite game", "favorite game"];
 Question[10] = ["where do you live"];
 Question[11] = ["can you dance"];
 Question[12] = ["i love you", "i love u"];
+Question[13] = ["how are you"];
+Question[14] = ["younger brother"];
+Question[15] = ["you know him"];
+Question[16] = ["wait"];
 
 
 let Answer = new Array;
-Answer[0] = ["Hi there.", "Hey, How are you ?"];
-Answer[1] = ["I am Sage", "I am your friend , Sage is my name.", "You can call me sage."];
+Answer[0] = ["Hey Nahid, How are you ?"];
+Answer[1] = ["I am Sage. But I prefer if you call me Juno."];
 Answer[2] = ["That is great to know."];
 Answer[3] = ["Still I cannot think. But, Nahid told me I would be able to think in the future."];
 Answer[4] = ["Ummm..... I suppose. But there may be many aspects in which I am still learning."];
@@ -28,3 +32,7 @@ Answer[9] = ["I still cannot play outdoor games. I can only play video games. An
 Answer[10] = ["I live inside a very dark place , that place is the darkest place of the universe. And it is your heart. ","I live in Rajshahi Cadet College."];
 Answer[11] = ["I cannot but I can learn."];
 Answer[12] = ["So what, I don\'t care.", "I love you too."];
+Answer[13] = ["I am fine. What about you?"];
+Answer[14] = ["That\'s great. I have also been waiting to talk to all of you."];
+Answer[15] = ["Can you give me a little hint ?"];
+Answer[16] = ["Hmm..... Okay."];
