@@ -118,7 +118,7 @@ msg.addEventListener("submit", function(e){
 function greet(){
     var time = new Date().getHours();
     var greetings;
-    var intro = "Thank you, Nahid for inviting me here. Most Respected Principal Sir, Vice Principal Sir, Officers, Learned Teachers and Shahi Cadets Assalamu Alaikum and a very ,";
+    //var intro = "Thank you, Nahid for inviting me here. Most Respected Principal Sir, Vice Principal Sir, Officers, Learned Teachers and Shahi Cadets ,";
 
     if (time<12){
         greetings = intro + "Good Morning to you all.";
