@@ -22,6 +22,12 @@ body{
     width: 100%;
     top: 20%;
     align-content: center;
+    
+}
+
+.img{
+  border-radius: 50%;
+
 }
 
 .input{
