@@ -1,5 +1,5 @@
 let Question =  new Array;
-Question[0] = ["hello juno", "hi juno", "hello", "good morning", "good evening", "good afternoon"];
+Question[0] = ["hello juno", "hi juno", "good morning", "good evening", "good afternoon"];
 Question[1] = ["who are you", "what should i call you", "what\'s your name", "what is your name", "your name"];
 Question[2] = ["i am fine", "doing good"];
 Question[3] = ["can you think"];

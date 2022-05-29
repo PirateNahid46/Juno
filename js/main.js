@@ -118,6 +118,7 @@ msg.addEventListener("submit", function(e){
 function greet(){
     var time = new Date().getHours();
     var greetings;
+    var intro = "";
     //var intro = "Thank you, Nahid for inviting me here. Most Respected Principal Sir, Vice Principal Sir, Officers, Learned Teachers and Shahi Cadets ,";
 
     if (time<12){
@@ -147,17 +148,12 @@ function sayText(text){
 
     }
     else{
-        speech.voice = voices[2];
+        speech.voice = voices[30];
 
     }
     speech.text = text;
+    window.speechSynthesis.speak(speech);
     
-    if(voices.length == 0){
-        responsiveVoice.speak(text, "US English Female");
-    }else{
-        window.speechSynthesis.speak(speech);
-
-    }
 
 
 }
@@ -167,6 +163,9 @@ function check(message){
         window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
         chatareamain.appendChild(showchatbotmsg("Showing Documentary of Rajshahi Cadet College."));
         sayText("Showing Documentary of Rajshahi Cadet College.");
+    }
+    else if(message.includes("hello")){
+        greet();
     }
 
     else if(message.includes("your age") || message.includes("how old are you")){
@@ -227,7 +226,7 @@ mic.addEventListener("click", function(){
     console.log("Activated");
     recognize();
 })
-greet();
+
 
 function giveTime(){
     var time = new Date();
