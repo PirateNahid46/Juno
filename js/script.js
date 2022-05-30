@@ -1,7 +1,7 @@
 let Question =  new Array;
 Question[0] = ["hello juno", "hi juno", "good morning", "good evening", "good afternoon"];
 Question[1] = ["who are you", "what should i call you", "what\'s your name", "what is your name", "your name"];
-Question[2] = ["i am fine", "doing good"];
+Question[2] = ["i am fine", "doing good", "i\'m fine"];
 Question[3] = ["can you think"];
 Question[4] =["what can you do"];
 Question[5] =["your favourite subject"];

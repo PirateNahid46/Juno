@@ -188,12 +188,12 @@ function check(message){
                     fetchChat.once("value").then( function (snapshot) {
                         if(snapshot.val() != null){
                             var misc = snapshot.child("misc").val();
-                            const name = "Cadet no. "+cn+ " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. " + misc;
+                            const name = "Cadet no. "+cn+ " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. He is from "+snapshot.child("district").val()+"." + misc;
                             chatareamain.appendChild(showchatbotmsg(name));
                             sayText(name);
                         }
                         else{
-                            const name = "I don\'t know about him. You can tell hime to add his information here.";
+                            const name = "I don\'t know about him. You can tell him to add his information here.";
                             window.open("https://piratenahid46.github.io/Directory/Add/index.html", "_blank");
                             chatareamain.appendChild(showchatbotmsg(name));
                             sayText(name);
