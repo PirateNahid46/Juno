@@ -78,7 +78,7 @@ Question[68] = new Array("what is  i s s  b");
 
 
 
-Answer[12]= new Array("Some brilliant cadets of Rajshahi Cadet College.");
+
 Answer[13]= new Array("");
 Answer[14]= new Array("Yes . I do. You are a human-being.");
 Answer[15]= new Array("Rajshahi Cadet Colege is one of the great institution in Bangladesh making the leaders of future generation.");
