@@ -16,6 +16,8 @@ Question[13] = ["how are you"];
 Question[14] = ["younger brother"];
 Question[15] = ["you know him"];
 Question[16] = ["wait"];
+Question[17] = ["who has made you", "who made you"];
+Question[18] = ["tell us about youself"];
 
 
 let Answer = new Array;
@@ -36,3 +38,5 @@ Answer[13] = ["I am fine. What about you?"];
 Answer[14] = ["That\'s great. I have also been waiting to talk to all of you."];
 Answer[15] = ["Can you give me a little hint ?"];
 Answer[16] = ["Hmm..... Okay."];
+Answer[17] = ["Some brilliant cadets of Rajshahi Cadet College."];
+Answer[18] = ["Umm.. Well, I don\'t want to talk about it now."];
