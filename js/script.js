@@ -17,7 +17,7 @@ Question[14] = ["younger brother"];
 Question[15] = ["you know him"];
 Question[16] = ["wait"];
 Question[17] = ["who has made you", "who made you"];
-Question[18] = ["tell us about youself"];
+Question[18] = ["introduce youself"];
 
 
 let Answer = new Array;
