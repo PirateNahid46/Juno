@@ -79,7 +79,7 @@ function showchatbotmsg(chatbotmsg){
     return chatareaouter;
 }
 function chatbotvoice(message){
-    last = ["Sorry, Can you say that again?"];
+    last = ["Sorry, Can you say that again?", "I didn\'t get that."];
     for(var x = 0; x < Question.length; x++){
         var Ques = new Array;
         Ques = Question[x];

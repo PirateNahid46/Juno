@@ -17,7 +17,7 @@ Question[14] = ["younger brother"];
 Question[15] = ["you know him"];
 Question[16] = ["wait"];
 Question[17] = ["who has made you", "who made you"];
-Question[18] = ["introduce youself"];
+Question[18] = ["introduce yourself"];
 
 
 let Answer = new Array;
@@ -39,4 +39,4 @@ Answer[14] = ["That\'s great. I have also been waiting to talk to all of you."];
 Answer[15] = ["Can you give me a little hint ?"];
 Answer[16] = ["Hmm..... Okay."];
 Answer[17] = ["Some brilliant cadets of Rajshahi Cadet College."];
-Answer[18] = ["Umm.. Well, I don\'t want to talk about it now."];
+Answer[18] = ["Umm.. Well, I was named after Juno. Juno was an ancient Roman goddess, the protector and special counsellor of the state. She was equated to Hera, queen of the gods in Greek mythology. A daughter of Saturn, she was the wife of Jupiter and the mother of Mars, Vulcan, Bellona and Juventas."];
