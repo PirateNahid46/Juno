@@ -158,6 +158,22 @@ function sayText(text){
 
 }
 
+
+let audio = new Audio();
+function playMusic(){
+    var url = ["https://files.piratenahid.workers.dev/0:/Music/Bgm.mp3", "https://files.piratenahid.workers.dev/0:/Music/Bgm2.mp3", "https://files.piratenahid.workers.dev/0:/Music/twinkle.mp3"];
+    let finalurl = url[Math.floor(Math.random() * url.length)];
+    console.log(finalurl);
+    audio.src = finalurl;
+    if(audio.paused == false){
+        audio.pause();
+    }
+    else{
+        audio.play();
+    }
+    
+}
+
 function check(message){
     if(message.includes("documentary")){
         window.open("https://youtu.be/QGdxJqZAD8w", "_blank");
@@ -166,6 +182,9 @@ function check(message){
     }
     else if(message.includes("hello")){
         greet();
+    }
+    else if(message.includes("music")){
+        playMusic();
     }
 
     else if(message.includes("your age") || message.includes("how old are you")){
