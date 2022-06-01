@@ -164,12 +164,13 @@ function playMusic(){
     var url = ["https://files.piratenahid.workers.dev/0:/Music/Bgm.mp3", "https://files.piratenahid.workers.dev/0:/Music/Bgm2.mp3", "https://files.piratenahid.workers.dev/0:/Music/twinkle.mp3"];
     let finalurl = url[Math.floor(Math.random() * url.length)];
     console.log(finalurl);
-    audio.src = finalurl;
-    if(audio.paused == false){
-        audio.pause();
-    }
-    else{
+    if(!audio.src){
+        audio.src = finalurl;
         audio.play();
+    }
+    else if(audio.paused == false){
+        audio.pause();
+        audio.src;
     }
     
 }
