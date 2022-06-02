@@ -12,8 +12,8 @@ const firebaseConfig = {
   };
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
-  var storage = firebase.storage();
-  var storageRef = storage.ref();
+//   var storage = firebase.storage();
+//   var storageRef = storage.ref();
   main();
 
   function main(){
@@ -160,17 +160,18 @@ function sayText(text){
 
 
 let audio = new Audio();
-function playMusic(){
+function playMusic(message){
     var url = ["https://files.piratenahid.workers.dev/0:/Music/Bgm.mp3", "https://files.piratenahid.workers.dev/0:/Music/Bgm2.mp3", "https://files.piratenahid.workers.dev/0:/Music/twinkle.mp3"];
     let finalurl = url[Math.floor(Math.random() * url.length)];
     console.log(finalurl);
-    if(!audio.src){
+    if(message.includes("play")){
         audio.src = finalurl;
         audio.play();
     }
-    else if(audio.paused == false){
+    
+    else if(message.includes("stop")|| message.includes("pause")){
         audio.pause();
-        audio.src;
+        audio.src ="";
     }
     
 }
@@ -185,7 +186,7 @@ function check(message){
         greet();
     }
     else if(message.includes("music")){
-        playMusic();
+        playMusic(message);
     }
 
     else if(message.includes("your age") || message.includes("how old are you")){
