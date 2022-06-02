@@ -166,7 +166,14 @@ function playMusic(message){
     console.log(finalurl);
     if(message.includes("play")){
         audio.src = finalurl;
-        audio.play();
+        if(!audio.paused){
+            audio.pause();
+            
+        }
+        else{
+            audio.play();
+            chatareamain.appendChild(showchatbotmsg("Playing Music."));   
+        }
     }
     
     else if(message.includes("stop")|| message.includes("pause")){
