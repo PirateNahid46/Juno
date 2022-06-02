@@ -195,6 +195,13 @@ function check(message){
     else if(message.includes("music")){
         playMusic(message);
     }
+    else if(message.includes("location")){
+        window.open("https://goo.gl/maps/fYEwR3PuAbzhooe16", "_blank");
+
+    }
+    else if(message.includes("call")){
+        callM(message);
+    }
 
     else if(message.includes("your age") || message.includes("how old are you")){
         var age = getAge();
@@ -253,7 +260,16 @@ mic.addEventListener("click", function(){
     mic.style.color='#39c81f';
     console.log("Activated");
     recognize();
-})
+});
+
+function callM(numb){
+    if(numb.includes("dm")){
+        window.location.href = "tel:+8801649024829";
+        sayText("Calling Duty Master");
+        chatareamain.appendChild(showchatbotmsg("Calling Duty Master"));
+
+    }
+}
 
 
 function giveTime(){
