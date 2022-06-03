@@ -269,6 +269,12 @@ function callM(numb){
         chatareamain.appendChild(showchatbotmsg("Calling Duty Master"));
 
     }
+    else if(numb.includes("principal")){
+        window.location.href = "tel:+8801769011230";
+        sayText("Calling Principal");
+        chatareamain.appendChild(showchatbotmsg("Calling Principal"));
+
+    }
 }
 
 
