@@ -263,7 +263,7 @@ mic.addEventListener("click", function(){
 });
 
 function callM(numb){
-    if(numb.includes("dm")){
+    if(numb.includes("dm") || numb.includes("duty master")){
         window.location.href = "tel:+8801748427404";
         sayText("Calling Duty Master");
         chatareamain.appendChild(showchatbotmsg("Calling Duty Master"));
