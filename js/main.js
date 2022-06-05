@@ -148,7 +148,7 @@ function sayText(text){
 
     }
     else{
-        speech.voice = voices[30];
+        speech.voice = voices[33];
 
     }
     speech.text = text;
@@ -169,6 +169,7 @@ function playMusic(message){
         if(!audio.paused){
             audio.pause();
             
+            
         }
         else{
             audio.play();
@@ -178,6 +179,7 @@ function playMusic(message){
     
     else if(message.includes("stop")|| message.includes("pause")){
         audio.pause();
+        chatareamain.appendChild(showchatbotmsg("Music Paused."));
         audio.src ="";
     }
     
@@ -275,6 +277,37 @@ function callM(numb){
         chatareamain.appendChild(showchatbotmsg("Calling Principal"));
 
     }
+	else{
+		callTeacher(numb);
+	}
+}
+var techIDs = [];
+var numbers = [];
+var techNames = [];
+	const fetchChat = db.ref("mentors/");
+    fetchChat.on("child_added", function (snapshot) {
+      const messages = snapshot.val();
+	  techIDs.push(messages.id);
+	  numbers.push(messages.mobile);
+	  techNames.push(messages.name);
+	  
+	});
+
+function callTeacher(teacher){
+	
+	for(var i = 0 ; i< techIDs.length; i++){
+			var Ask = techIDs[i].toLowerCase();
+			if (teacher.includes(Ask)){
+				console.log(Ask);
+				console.log(numbers[i]);
+				
+				showchatbotmsg("Calling " + techNames[i]);
+				sayText("Calling " + techNames[i]);
+				window.location.href = "tel:" + numbers[i];
+			}
+	}
+	  
+        
 }
 
 
