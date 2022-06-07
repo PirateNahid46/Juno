@@ -265,20 +265,22 @@ mic.addEventListener("click", function(){
 });
 
 function callM(numb){
-    if(numb.includes("dm") || numb.includes("duty master")){
+    var whom = numb.replace("call", "");
+    var resultN = whom.replace(/ /g, '');; 
+    if(resultN.includes("dm") || resultN.includes("duty master")){
         window.location.href = "tel:+8801748427404";
         sayText("Calling Duty Master");
         chatareamain.appendChild(showchatbotmsg("Calling Duty Master"));
 
     }
-    else if(numb.includes("principal")){
+    else if(resultN.includes("principal")){
         window.location.href = "tel:+8801769011230";
         sayText("Calling Principal");
         chatareamain.appendChild(showchatbotmsg("Calling Principal"));
 
     }
 	else{
-		callTeacher(numb);
+		callTeacher(resultN);
 	}
 }
 var techIDs = [];
