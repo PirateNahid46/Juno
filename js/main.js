@@ -221,11 +221,12 @@ function check(message){
 			var matches = str.match(/(\d+)/);
 			if (matches) {
 					var cn	= matches[0];
-                    const fetchChat = db.ref("info/" +cn);
+                    var final = cn.replace(/ /g, '');
+                    const fetchChat = db.ref("info/" +final);
                     fetchChat.once("value").then( function (snapshot) {
                         if(snapshot.val() != null){
                             var misc = snapshot.child("misc").val();
-                            const name = "Cadet no. "+cn+ " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. He is from "+snapshot.child("district").val()+"." + misc;
+                            const name = "Cadet no. "+ final + " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. He is from "+snapshot.child("district").val()+"." + misc;
                             chatareamain.appendChild(showchatbotmsg(name));
                             sayText(name);
                         }
