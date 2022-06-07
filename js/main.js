@@ -226,7 +226,7 @@ function check(message){
                     fetchChat.once("value").then( function (snapshot) {
                         if(snapshot.val() != null){
                             var misc = snapshot.child("misc").val();
-                            const name = "Cadet no. "+ final + " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. He is from "+snapshot.child("district").val()+"." + misc;
+                            const name = "Cadet no. "+ final + " is Cadet " + snapshot.child("name").val() + ". He is a cadet of " + snapshot.child("house").val() +" House of " + snapshot.child("batch").val() + " Batch. He is from "+snapshot.child("district").val()+". " + misc;
                             chatareamain.appendChild(showchatbotmsg(name));
                             sayText(name);
                         }
