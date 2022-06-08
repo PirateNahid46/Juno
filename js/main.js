@@ -268,7 +268,7 @@ mic.addEventListener("click", function(){
 function callM(numb){
     var whom = numb.replace("call", "");
     var resultN = whom.replace(/ /g, '');
-    if(resultN.includes("dm") || resultN.includes("duty master")){
+    if(resultN.includes("dm") || resultN.includes("dutymaster")){
         window.location.href = "tel:+8801748427404";
         sayText("Calling Duty Master");
         chatareamain.appendChild(showchatbotmsg("Calling Duty Master"));
