@@ -74,7 +74,7 @@ function recognize(){
 
 function showchatbotmsg(chatbotmsg){
     let output = '';
-    output += `<div class="chatpac"><figure class="avatar"><img src="./images/gif.gif" /></figure><div class="chatarea-inner chatbot">${chatbotmsg}</div></div>`;
+    output += `<div class="chatpac"><figure class="avatar"><img src="https://files.piratenahid.workers.dev/0:/Images/gif.gif" /></figure><div class="chatarea-inner chatbot">${chatbotmsg}</div></div>`;
     chatareaouter.innerHTML += output;
     return chatareaouter;
 }
