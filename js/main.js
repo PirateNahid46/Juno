@@ -206,7 +206,8 @@ function check(message){
         callM(message);
     }
     else if(message.includes("video")){
-        window.open("https://files.piratenahid.workers.dev/0:/Movies/Vidoes/Edith.mp4?a=view", "_blank");
+        
+       window.open("https://files.piratenahid.workers.dev/0:/Movies/Vidoes/Edith.mp4?a=view", "_blank")
 
 
     }
