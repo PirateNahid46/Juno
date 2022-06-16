@@ -181,6 +181,7 @@ function playMusic(message){
         audio.pause();
         chatareamain.appendChild(showchatbotmsg("Music Paused."));
         audio.src ="";
+        
     }
     
 }
@@ -203,6 +204,11 @@ function check(message){
     }
     else if(message.includes("call")){
         callM(message);
+    }
+    else if(message.includes("video")){
+        window.open("https://files.piratenahid.workers.dev/0:/Movies/Vidoes/Edith.mp4?a=view", "_blank");
+
+
     }
     else if(message.includes("show profile")){
         showProfile(message);
