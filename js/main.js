@@ -204,6 +204,9 @@ function check(message){
     else if(message.includes("call")){
         callM(message);
     }
+    else if(message.includes("show profile")){
+        showProfile(message);
+    }
 
     else if(message.includes("your age") || message.includes("how old are you")){
         var age = getAge();
@@ -264,6 +267,19 @@ mic.addEventListener("click", function(){
     console.log("Activated");
     recognize();
 });
+function showProfile(profileN){
+    var str = profileN;
+    var matches = str.match(/(\d+)/);
+			if (matches) {
+					var cn	= matches[0];
+                    var final = cn.replace(/ /g, '');
+                    window.open("https://piratenahid46.github.io/Directory/sage/profiles/index.html?"+ final, "_blank");
+                    sayText("Showing Profile of " + final);
+                
+
+			}
+
+}
 
 function callM(numb){
     var whom = numb.replace("call", "");
