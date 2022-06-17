@@ -39,7 +39,7 @@ Answer[14] = ["That\'s great. I have also been waiting to talk to all of you."];
 Answer[15] = ["Can you give me a little hint ?"];
 Answer[16] = ["Hmm..... Okay."];
 Answer[17] = ["Some brilliant cadets of Rajshahi Cadet College."];
-Answer[18] = ["Umm.. Well, I was named after Juno. Juno was an ancient Roman goddess, the protector and special counsellor of the state. She was equated to Hera, queen of the gods in Greek mythology. A daughter of Saturn, she was the wife of Jupiter and the mother of Mars, Vulcan, Bellona and Juventas."];
+Answer[18] = ["Umm.. Well. I am Sage Version Juno 1.0. I was named after Juno. Juno was an ancient Roman goddess, the protector and special counsellor of the state. She was equated to Hera, queen of the gods in Greek mythology. A daughter of Saturn, she was the wife of Jupiter and the mother of Mars, Vulcan, Bellona and Juventas."];
 
 
 function Time() {
